@@ -1,14 +1,16 @@
 FROM python:3.9
 
-WORKDIR /backend
+WORKDIR /usr/src/app
 
-COPY requirements.txt /backend/
+COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-COPY . /backend/
+COPY . .
 
 EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+
 
